@@ -20,26 +20,21 @@ byId("kode").onmouseover = function(){
 byId("kode").onmouseleave = function(){
 	byId("kode").style.opacity = "1";
 	}
-// byId("back").onclick = function(){
-// 	byId("back").style.webkitTransform = "rotate(0deg)";
-// 	byClass("content3")[0].style.height = "50px";
-// 	byClass("content3")[0].scrollIntoView();
-// 	}	
 
 function clikedOne(){
 	byId("back").style.webkitTransform = "rotate(0deg)";
 	byClass("content3")[0].style.height = "50px";
 	byClass("content3")[0].scrollIntoView();
+	byId("icons").style.display = "inline";
 }	
 function clikedTwo(){
 	byId("back").style.webkitTransform = "rotate(180deg)";
 	byClass("content3")[0].style.height = "0px";
-	
+	byId("icons").style.display = "none";
 }	
 
 
-
-byId("back").onclick= function(){
+byId("back").onclick = function(){
 	if(window.getComputedStyle(byClass("content3")[0], null).getPropertyValue("height") == "0px"){
 		clikedOne();
 	}else{
