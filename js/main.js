@@ -1,4 +1,5 @@
 //global functions
+
 function byId (id){
 	return document.getElementById(id);
 }
@@ -7,11 +8,24 @@ function byClass (id){
 }
 
 
+// windnow.onscroll = function(){
+
+// 	console.log("asd");
+// 	}
+
+
+
+
 byId("kode").onclick = function(){
-	byClass("content2")[0].scrollIntoView();
+
+	document.getElementsByClassName("content2")[0].style.webkitTransform = 'translate(0px, -100%)';
+	document.getElementsByClassName("content")[0].style.webkitTransform = 'translate(0px, -100%)';
+
+
 	}
 byId("name").onclick = function(){
-	byId("about").scrollIntoView();
+	document.getElementsByClassName("content2")[0].style.webkitTransform = 'translate(0px, 0px)';
+	document.getElementsByClassName("content")[0].style.webkitTransform = 'translate(0px, 0px)';
 	byId("kode").style.opacity = "1";
 	}
 byId("kode").onmouseover = function(){
@@ -21,23 +35,21 @@ byId("kode").onmouseleave = function(){
 	byId("kode").style.opacity = "1";
 	}
 
-function clikedOne(){
-	byId("back").style.webkitTransform = "rotate(0deg)";
-	byClass("content3")[0].style.height = "50px";
-	byClass("content3")[0].scrollIntoView();
-	byId("icons").style.display = "inline";
-}	
-function clikedTwo(){
-	byId("back").style.webkitTransform = "rotate(180deg)";
-	byClass("content3")[0].style.height = "0px";
-	byId("icons").style.display = "none";
-}	
+// function clikedOne(){
+// 	document.getElementsByClassName("content2")[0].style.WebkitTransition = "all 20s"
+// 	byId("back").style.webkitTransform = "rotate(0deg)";
+// 	document.getElementsByClassName("content2")[0].style.webkitTransform = 'translate(0px, -100%)';
+// 	byClass("content3")[0].scrollIntoView();
+// 	byId("icons").style.display = "inline";
+// }	
+// function clikedTwo(){
+// 	byId("back").style.webkitTransform = "rotate(180deg)";
+// 	byClass("content3")[0].style.height = "0px";
+// 	byId("icons").style.display = "none";
+// }	
 
 
-byId("back").onclick = function(){
-	if(window.getComputedStyle(byClass("content3")[0], null).getPropertyValue("height") == "0px"){
-		clikedOne();
-	}else{
-		clikedTwo();
-	}
-}
+
+setTimeout(function(){
+	document.getElementById("embed_npfido").style.display = "none";
+},200);
